@@ -3,7 +3,7 @@ import pickle
 import streamlit as st
 from sklearn.preprocessing import StandardScaler
 
-model = pickle.load(open('D:/environments/Streamlit_diabities/train_model.sav','rb'))
+model = pickle.load(open('train_model.sav','rb'))
 
 
 def diabetes_prediction(input_data):
