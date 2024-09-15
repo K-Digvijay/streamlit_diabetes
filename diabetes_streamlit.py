@@ -1,18 +1,18 @@
 import numpy as np
 import pickle
 import streamlit as st
-from sklearn.preprocessing import StandardScaler
+#from sklearn.preprocessing import StandardScaler
 
 model = pickle.load(open('train_model.sav','rb'))
 
 
 def diabetes_prediction(input_data):
-    scaled = StandardScaler()
+    #scaled = StandardScaler()
     #input_data = (4,110,95,0,0,37,0.191,30)
     input_data_as_array = np.array(input_data)
     input_data_reshape = input_data_as_array.reshape(1,-1)
-    std_scaled = scaled.fit_transform(input_data_reshape)
-    prediction = model.predict(std_scaled)
+    #std_scaled = scaled.fit_transform(input_data_reshape)
+    prediction = model.predict(input_data_reshape)
 
     if (prediction[0] == 0):
         return 'The Prediction is true the person is "Diabetic"'
